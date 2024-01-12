@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{object.title}}
+{% endblock %}
+
+{% block body %}
+  <h1>{{object.category.name}}</h1>
+    <strong>
+      {{object.title}}
+    </strong>
+    <br><br>
+    {{object.text}}
+    <br><br>
+    <div>
+      <a href="{% url 'posts:list' %}">Back to list</a>
+    </div>
+  {% include 'common/footer-common.html' %}
+{% endblock %}
