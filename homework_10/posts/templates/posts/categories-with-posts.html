@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Categories w/ posts
+{% endblock %}
+
+{% block body %}
+  <h1>Categories</h1>
+  <h2>With posts</h2>
+
+  {% if categories %}
+    <ul>
+      {% for category in categories %}
+        <li>
+          <strong>{{ category }}</strong>
+          <ul>
+            {% for post in category.posts.all %}
+              <li>{{ post }}</li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <h3>No categories yet</h3>
+  {% endif %}
+
+  {% include 'common/footer-common.html' %}
+{% endblock %}

@@ -3,8 +3,6 @@ name: homework_test
 on:
   push:
     branches: [ "homework_10" ]
-  pull_request:
-    branches: [ "homework_10" ]
 
 permissions:
   contents: read
